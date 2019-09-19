@@ -20,6 +20,7 @@
 		6BE20145232A66D2001DF1D1 /* shader.frag in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20144232A66D2001DF1D1 /* shader.frag */; };
 		6BFA60A2233398E300A361B9 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 6BE20142232A66B2001DF1D1 /* shader.vs */; };
 		6BFA60A3233398E300A361B9 /* shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 6BE20144232A66D2001DF1D1 /* shader.frag */; };
+		6BFA60A52333AAB000A361B9 /* awesomeface.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BFA60A42333AAB000A361B9 /* awesomeface.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		6BE2013F232A419C001DF1D1 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		6BE20142232A66B2001DF1D1 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		6BE20144232A66D2001DF1D1 /* shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		6BFA60A42333AAB000A361B9 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		6B1689D5232F28EA00443423 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				6BFA60A42333AAB000A361B9 /* awesomeface.png */,
 				6B1689D6232F28F300443423 /* container.jpg */,
 			);
 			path = Res;
@@ -204,6 +207,7 @@
 				6BFA60A2233398E300A361B9 /* shader.vs in Resources */,
 				6BFA60A3233398E300A361B9 /* shader.frag in Resources */,
 				6B052C3B2317D5560006F5F8 /* Assets.xcassets in Resources */,
+				6BFA60A52333AAB000A361B9 /* awesomeface.png in Resources */,
 				6B1689D7232F28F300443423 /* container.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
