@@ -16,7 +16,6 @@
 		6B052C4C2317D6530006F5F8 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B052C4B2317D6530006F5F8 /* libglfw.3.3.dylib */; };
 		6B052C4E2317D6640006F5F8 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6B052C4D2317D6640006F5F8 /* glad.c */; };
 		6B1689D7232F28F300443423 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B1689D6232F28F300443423 /* container.jpg */; };
-		6BE20140232A419C001DF1D1 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE2013E232A419C001DF1D1 /* Shader.cpp */; };
 		6BE20143232A66B2001DF1D1 /* shader.vs in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20142232A66B2001DF1D1 /* shader.vs */; };
 		6BE20145232A66D2001DF1D1 /* shader.frag in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20144232A66D2001DF1D1 /* shader.frag */; };
 /* End PBXBuildFile section */
@@ -35,7 +34,6 @@
 		6B052C4B2317D6530006F5F8 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		6B052C4D2317D6640006F5F8 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glad.c; sourceTree = "<group>"; };
 		6B1689D6232F28F300443423 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
-		6BE2013E232A419C001DF1D1 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		6BE2013F232A419C001DF1D1 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
 		6BE20142232A66B2001DF1D1 /* shader.vs */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		6BE20144232A66D2001DF1D1 /* shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				6BE2013F232A419C001DF1D1 /* Shader.h */,
-				6BE2013E232A419C001DF1D1 /* Shader.cpp */,
 				6BE20142232A66B2001DF1D1 /* shader.vs */,
 				6BE20144232A66D2001DF1D1 /* shader.frag */,
 			);
@@ -216,7 +213,6 @@
 			files = (
 				6BE20143232A66B2001DF1D1 /* shader.vs in Sources */,
 				6B04C0C3232F403C00741BE0 /* main.cpp in Sources */,
-				6BE20140232A419C001DF1D1 /* Shader.cpp in Sources */,
 				6BE20145232A66D2001DF1D1 /* shader.frag in Sources */,
 				6B052C4E2317D6640006F5F8 /* glad.c in Sources */,
 			);

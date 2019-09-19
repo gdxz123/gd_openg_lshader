@@ -15,18 +15,21 @@
 #include "Shader.h"
 
 using namespace std;
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 const GLuint WIDTH = 600, HEIGHT = 600;
 
 int main(int argc, char **argv){
     glfwInit();
-
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
-    // 这个非常重要，适用于mac os系统
+    #ifdef __APPLE__
+    // compat mac os
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    #endif
     
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "LearnOpenGL", nullptr, nullptr);
     if (window == nullptr) {
@@ -35,6 +38,7 @@ int main(int argc, char **argv){
         return -1;
     }
     glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
     glfwSetKeyCallback(window, key_callback);
     
@@ -44,7 +48,7 @@ int main(int argc, char **argv){
     }
     
     glViewport(0, 0, WIDTH, HEIGHT);
-    Shader ourShader("Shader/shader.vs", "Shader/shader.frag");
+    Shader ourShader("shader.vs", "shader.frag");
     
     GLfloat vertices[] = {
         // Position          // Colors            // Texture Coords
@@ -60,7 +64,7 @@ int main(int argc, char **argv){
     };
     
     GLuint VBO, VAO, EBO;
-//    glGenVertexArrays(1, &VAO);
+    glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
     
@@ -100,13 +104,16 @@ int main(int argc, char **argv){
     // Load Image, create texture and generate mipmaps
     int width, height;
     unsigned char *image = SOIL_load_image("Res/container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-    glGenerateMipmap(GL_TEXTURE_2D);
+    if (image) {
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+        glGenerateMipmap(GL_TEXTURE_2D);
+    } else {
+        cout << "Failed to load texture" << endl;
+    }
     SOIL_free_image_data(image);
     glBindTexture(GL_TEXTURE_2D, 0);
     
     while (!glfwWindowShouldClose(window)) {
-        glfwPollEvents();
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         
         glBindTexture(GL_TEXTURE_2D, texture);
@@ -118,6 +125,7 @@ int main(int argc, char **argv){
         glBindVertexArray(0);
         
         glfwSwapBuffers(window);
+        glfwPollEvents();
     }
     
     glDeleteVertexArrays(1, &VAO);
@@ -125,7 +133,6 @@ int main(int argc, char **argv){
     glDeleteBuffers(1, &EBO);
     
     glfwTerminate();
-    
     return 0;
 }
 
@@ -134,6 +141,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
     }
+}
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+    glViewport(0, 0, width, height);
 }
 
 
