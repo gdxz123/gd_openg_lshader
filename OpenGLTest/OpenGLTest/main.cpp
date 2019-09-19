@@ -18,7 +18,7 @@ using namespace std;
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
-const GLuint WIDTH = 600, HEIGHT = 600;
+const GLuint WIDTH = 400, HEIGHT = 400;
 
 int main(int argc, char **argv){
     glfwInit();
@@ -103,7 +103,7 @@ int main(int argc, char **argv){
     
     // Load Image, create texture and generate mipmaps
     int width, height;
-    unsigned char *image = SOIL_load_image("Res/container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
+    unsigned char *image = SOIL_load_image("container.jpg", &width, &height, 0, SOIL_LOAD_RGB);
     if (image) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -115,7 +115,7 @@ int main(int argc, char **argv){
     
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        
+        glClear(GL_COLOR_BUFFER_BIT);
         glBindTexture(GL_TEXTURE_2D, texture);
         
         ourShader.Use();

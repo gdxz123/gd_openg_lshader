@@ -18,6 +18,8 @@
 		6B1689D7232F28F300443423 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B1689D6232F28F300443423 /* container.jpg */; };
 		6BE20143232A66B2001DF1D1 /* shader.vs in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20142232A66B2001DF1D1 /* shader.vs */; };
 		6BE20145232A66D2001DF1D1 /* shader.frag in Sources */ = {isa = PBXBuildFile; fileRef = 6BE20144232A66D2001DF1D1 /* shader.frag */; };
+		6BFA60A2233398E300A361B9 /* shader.vs in Resources */ = {isa = PBXBuildFile; fileRef = 6BE20142232A66B2001DF1D1 /* shader.vs */; };
+		6BFA60A3233398E300A361B9 /* shader.frag in Resources */ = {isa = PBXBuildFile; fileRef = 6BE20144232A66D2001DF1D1 /* shader.frag */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +201,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFA60A2233398E300A361B9 /* shader.vs in Resources */,
+				6BFA60A3233398E300A361B9 /* shader.frag in Resources */,
 				6B052C3B2317D5560006F5F8 /* Assets.xcassets in Resources */,
 				6B1689D7232F28F300443423 /* container.jpg in Resources */,
 			);
