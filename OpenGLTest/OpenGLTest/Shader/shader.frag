@@ -14,10 +14,11 @@ in vec2 TexCoord;
 
 uniform sampler2D texture0;
 uniform sampler2D texture1;
+//uniform float mixValue;
 
 void main() {
 //    FragColor = texture(texture1, TexCoord);
-    FragColor = mix(texture(texture0, TexCoord), texture(texture1, TexCoord), 0.2);
+    FragColor = mix(texture(texture0, TexCoord), texture(texture1, vec2(TexCoord.x,TexCoord.y)), mixValue);
 }
 
 
