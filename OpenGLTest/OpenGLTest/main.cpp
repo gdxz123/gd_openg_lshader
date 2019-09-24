@@ -147,7 +147,7 @@ int main(int argc, char **argv){
         glBindTexture(GL_TEXTURE_2D, texture1);
         glUniform1i(glGetUniformLocation(ourShader.Program, "texture1"), 1);
         
-        glUniform1i(glGetUniformLocation(ourShader.Program, "mixValue"), mixValue);
+        glUniform1f(glGetUniformLocation(ourShader.Program, "mixValue"), mixValue);
         
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -171,18 +171,20 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
         glfwSetWindowShouldClose(window, GL_TRUE);
     }
     if (key == GLFW_KEY_UP && action == GLFW_PRESS) {
-        if ((mixValue + 0.1f) > 1.0f) {
-            mixValue = 1.0f;
+        if ((mixValue+0.1) > 1.0) {
+            mixValue = 1.0;
         } else {
-            mixValue += 0.1f;
+            mixValue += 0.1;
         }
+        cout << "press up " << mixValue << endl;
     }
     if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) {
-        if (mixValue - 0.1f < 0.0f) {
-            mixValue -= 0.1f;
+        if ((mixValue - 0.1) < 0.0) {
+            mixValue = 0.0;
         } else {
-            mixValue = 0.0f;
+            mixValue -= 0.1;
         }
+        cout << "press down " << mixValue << endl;
     }
     
 }
