@@ -18,7 +18,8 @@ using namespace std;
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
-const GLuint WIDTH = 400, HEIGHT = 400;
+const GLuint WIDTH = 500, HEIGHT = 500;
+GLfloat mixValue = 0.1;
 
 int main(int argc, char **argv){
     glfwInit();
@@ -93,8 +94,8 @@ int main(int argc, char **argv){
     glGenTextures(1, &texture0);
     glBindTexture(GL_TEXTURE_2D, texture0);
     // set the texture wrappin parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     // set texture filtering parameters
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -146,6 +147,8 @@ int main(int argc, char **argv){
         glBindTexture(GL_TEXTURE_2D, texture1);
         glUniform1i(glGetUniformLocation(ourShader.Program, "texture1"), 1);
         
+        glUniform1i(glGetUniformLocation(ourShader.Program, "mixValue"), mixValue);
+        
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
@@ -167,6 +170,21 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
         glfwSetWindowShouldClose(window, GL_TRUE);
     }
+    if (key == GLFW_KEY_UP && action == GLFW_PRESS) {
+        if ((mixValue + 0.1f) > 1.0f) {
+            mixValue = 1.0f;
+        } else {
+            mixValue += 0.1f;
+        }
+    }
+    if (key == GLFW_KEY_DOWN && action == GLFW_PRESS) {
+        if (mixValue - 0.1f < 0.0f) {
+            mixValue -= 0.1f;
+        } else {
+            mixValue = 0.0f;
+        }
+    }
+    
 }
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
