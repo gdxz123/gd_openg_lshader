@@ -13,6 +13,7 @@
 #include <GLFW/glfw3.h>
 #include "SOIL.h"
 #include "Shader.h"
+#include <glm/glm.hpp>
 
 using namespace std;
 
