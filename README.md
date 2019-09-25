@@ -22,9 +22,11 @@ OpenGL.framework
 ```
 4. download GLAD
 http://glad.dav1d.de
-select Language: C/C++, Profile: Core, API gl: Version 3.3, Specification: OpenGL <br> Options: Generate a loader and click GENERATE <br> unzip the file and put them into "/usr/local/include"
+select Language: C/C++, Profile: Core, API gl: Version 3.3, Specification: OpenGL <br> Options: Generate a loader and click GENERATE <br> unzip the file and put them into 
+
+"/usr/local/include"
 <br>
-<br>
+
 5. drap the glad.c into project
 <br>
 <br>
