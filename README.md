@@ -6,14 +6,7 @@
 $ brew install glew
 $ brew install glfw3
 ```
-2. Xcode project Target build setting -> header search paths add
-"/usr/local/include"
-<br>
-"$(inherited)"
-<br>
-"/usr/local/Cellar/glfw/3.3/lib"
-<br>
-"/usr/local/Cellar/glew/2.1.0/lib"
+2. Xcode project Target build setting -> header search paths add <br> "/usr/local/include" <br> "$(inherited)" <br> "/usr/local/Cellar/glfw/3.3/lib" <br> "/usr/local/Cellar/glew/2.1.0/lib"
 <br>
 <br>
 3. Xcode project Build Phases-> Link Binary With Libraries click add Other
