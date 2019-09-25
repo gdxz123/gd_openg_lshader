@@ -25,9 +25,9 @@ select Language: C/C++, Profile: Core, API gl: Version 3.3, Specification: OpenG
 Options: Generate a loader and click GENERATE
 unzip the file and put them into "/usr/local/include"
 
-5.drap the glad.c into project
+5. drap the glad.c into project
 
-6.download GLM
+6. download GLM
 http://glm.g-truc.net/0.9.5/index.html
 put glm into "/usr/local/include" and you can use glm api in your project
 
