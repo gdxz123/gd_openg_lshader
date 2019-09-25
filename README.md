@@ -1,6 +1,6 @@
 # gd_openg_lshader
 
-# Build Mac OS Xcode Environment to run OpenGL project
+# Build Xcode Environment to run OpenGL project
 1. Install GLEW and GLFW
 ``` shell
 $ brew install glew
