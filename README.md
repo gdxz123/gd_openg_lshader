@@ -6,7 +6,6 @@
 $ brew install glew
 $ brew install glfw3
 ```
-<br>
 2. Xcode project Target build setting -> header search paths add
 <br>
 "/usr/local/include"
