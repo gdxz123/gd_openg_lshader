@@ -1,6 +1,5 @@
 # gd_openg_lshader
-<br>
-<br>
+
 # Build Mac OS Xcode Environment to run OpenGL project
 1. Install GLEW and GLFW
 ``` shell
