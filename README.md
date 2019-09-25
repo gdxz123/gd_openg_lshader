@@ -7,7 +7,6 @@ $ brew install glew
 $ brew install glfw3
 ```
 2. Xcode project Target build setting -> header search paths add
-<br>
 "/usr/local/include"
 <br>
 "$(inherited)"
